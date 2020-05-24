@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: productservice
+  labels:
+    app: productservice
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      app: productservice
+  template:
+    metadata:
+      labels:
+        app: productservice
+    spec:
+      containers:
+      - name: productservice
+        image: markvincze/productservice:1
+        resources:
+          limits:
+            cpu: 50m
+            memory: 50Mi
+          requests:
+            cpu: 50m
+            memory: 50Mi

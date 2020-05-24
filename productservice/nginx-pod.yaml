@@ -1,13 +1,14 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: productservice
+  name: nginx
   labels:
-    app: productservice
+    app: nginx
 spec:
   containers:
-  - name: productservice
-    image: markvincze/productservice:1
+  - name: nginx
+    image: envoyproxy/envoy:v1.14.1
+    command: ["bin/bash"]
     resources:
       limits:
         cpu: 50m

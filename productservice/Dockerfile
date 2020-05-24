@@ -4,4 +4,8 @@ ADD productservice.py /
 
 RUN pip install flask
 
-CMD [ "python", "./productservice.py" ]
+ENV FLASK_APP ./productservice.py
+
+EXPOSE 5000
+
+CMD [ "flask", "run", "--host=0.0.0.0" ]

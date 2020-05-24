@@ -1,0 +1,36 @@
+# Show nodes for minikube
+k get nodes
+
+# Show nodes for the prod cluster
+k get nodes
+
+# Will show nothing
+k get pods
+
+# Show internal k8s pods
+k get pods -n kube-system
+
+# Show pods in all namespaces
+k get pods --all-namespaces
+
+# List the resource types
+k api-resources
+
+# Apply the YAML to deploy a pod
+k apply -f productservice-pod.yaml
+
+# Reach the pod
+k port-forward productservice 5000
+
+# Edit the ReplicaSet
+k edit rs productservice
+
+# Start curl test pod
+k run curl-test --image=radial/busyboxplus:curl -i --tty --rm
+
+# Send 20 requests with hey
+hey -n 20 -c 2 http://172.29.254.189:30002/
+
+# Keep sending requests from 10 threads with hey
+hey -c 10 -z 10m http://172.29.254.189:30002/expensive
+
