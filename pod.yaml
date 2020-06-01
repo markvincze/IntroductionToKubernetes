@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: productservice
-    image: markvincze/productservice:1
+    image: markvincze/productservice:3
     resources:
       limits:
         cpu: 50m

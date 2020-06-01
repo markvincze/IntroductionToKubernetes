@@ -5,7 +5,6 @@ metadata:
   labels:
     app: productservice
 spec:
-  # modify replicas according to your case
   replicas: 3
   selector:
     matchLabels:
@@ -17,7 +16,7 @@ spec:
     spec:
       containers:
       - name: productservice
-        image: markvincze/productservice:1
+        image: markvincze/productservice:3
         resources:
           limits:
             cpu: 50m

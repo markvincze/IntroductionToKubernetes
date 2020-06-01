@@ -1,3 +1,8 @@
+# Cleanup
+k delete rs productservice
+k delete hpa productservice
+k delete svc productservice
+
 # Show nodes for minikube
 k get nodes
 

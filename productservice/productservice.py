@@ -15,7 +15,5 @@ def root():
 def expensive():
     num1 = random.randint(1, 5)
     until = time() + num1
-    # until = time() + 15
     while time() < until:1
     return 'Waiting done\n'
-
